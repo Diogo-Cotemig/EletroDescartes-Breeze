@@ -1,6 +1,25 @@
 // Unifique todo o seu código JavaScript em um único listener para 'DOMContentLoaded'
 document.addEventListener('DOMContentLoaded', function() {
     
+        // Encontra o botão e o contêiner do texto
+        const showButton = document.getElementById('show-text-button');
+        const textContainer = document.getElementById('mission-text-container');
+        
+        // Adiciona um "ouvinte de evento" para o clique no botão
+        showButton.addEventListener('click', function(event) {
+            // Previne o comportamento padrão do link (ir para o topo da página)
+            event.preventDefault();
+
+            // Alterna a visibilidade do contêiner de texto
+            textContainer.classList.toggle('visible-content');
+            
+            // Opcional: Altera o texto do botão
+            if (textContainer.classList.contains('visible-content')) {
+                showButton.textContent = 'Ocultar Texto';
+            } else {
+                showButton.textContent = 'Conheça a EletroDescarte';
+            }
+        });
     // ----------------------
     // Botão "Saiba Mais"
     // ----------------------
@@ -152,3 +171,4 @@ A empresa também tem um compromisso com a educação e a conscientização. A E
     // Outras funções que você pode precisar
     // Adicione-as aqui e use window. para que sejam acessíveis
 });
+

@@ -98,37 +98,37 @@ document.addEventListener('DOMContentLoaded', () => {
       switch (item) {
         case 'Hardware':
           imagens = [
-            'https://usagif.com/wp-content/uploads/gifs/globe-47.gif',
-            'https://usagif.com/wp-content/uploads/gifs/globe-47.gif'
+            '{{ asset("img/Terra.gif") }}',
+            '{{ asset("img/Terra.gif") }}'
           ];
           break;
         case 'Eletrodomésticos':
           imagens = [
-            'https://usagif.com/wp-content/uploads/gifs/globe-47.gif',
-            'https://usagif.com/wp-content/uploads/gifs/globe-47.gif',
-            'https://usagif.com/wp-content/uploads/gifs/globe-47.gif'
+            '{{ asset("img/Terra.gif") }}',
+            '{{ asset("img/Terra.gif") }}',
+            '{{ asset("img/Terra.gif") }}'
           ];
           break;
         case 'Monitores':
           imagens = [
-            'https://usagif.com/wp-content/uploads/gifs/globe-47.gif',
-            'https://usagif.com/wp-content/uploads/gifs/globe-47.gif',
-            'https://usagif.com/wp-content/uploads/gifs/globe-47.gif'
+            '{{ asset("img/Terra.gif") }}',
+            '{{ asset("img/Terra.gif") }}',
+            '{{ asset("img/Terra.gif") }}'
           ];
           break;
         case 'Computador':
           imagens = [
-            'https://usagif.com/wp-content/uploads/gifs/globe-47.gif'
+            '{{ asset("img/Terra.gif") }}'
           ];
           break;
         case 'Pilhas':
           imagens = [
-            'https://usagif.com/wp-content/uploads/gifs/globe-47.gif',
-            'https://usagif.com/wp-content/uploads/gifs/globe-47.gif'
+            '{{ asset("img/Terra.gif") }}',
+            '{{ asset("img/Terra.gif") }}'
           ];
           break;
         default:
-          imagens = ['https://usagif.com/wp-content/uploads/gifs/globe-47.gif'];
+          imagens = ['{{ asset("img/Terra.gif") }}'];
       }
 
       const imagemTags = imagens.map(url => `<img src="${url}" alt="${item}" style="max-width: 150px; margin: 10px;">`).join('');

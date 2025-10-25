@@ -10,12 +10,22 @@ Turma 3E1
 - [x] Tela de cadastro de usuários
 - [x] Tela de login com autenticação
 - [x] Tela de esqueceu a senha
+- [x] Tela de administradores
+- [x] Tela de contato
+- [x] Tela de histórico do usuário
+- [x] Tela de graficos
+- [x] Tela de pagamento
+- [x] Tela de servicos
 - [x] Busca eficiente
 - [x] Pontos de descarte em formato de maps
 - [x] Sistema de maps
 - [x] Informações em dashBoards
 - [x] Assistência tecnica
 - [x] Tela de histórico do usuário
+- [x] Acompanhamento do descarte
+- [x] Assistente Virtual
+- [x] Descartes concluidos
+- [x] Configuracao de Notificacoes
 
 # Nome do Projeto
 <!-- Eletro-Descarte -->
@@ -25,137 +35,147 @@ Turma 3E1
 
 ## Integrantes
 <!-- Liste todos os integrantes do grupo no formato Nome - Matrícula -->
-Diogo Rodriguês da Silva - Direção; BackEnd e FrontEnd  - 12302678
-Marco Antônio Mendes Pines - Planejamento; BackEnd e Planilhas - 1230XXXX
-Pedro Henrique de Souza -Organização; Planilha e FrontEnd - 1230XXXX
-Gabriel Henrique Tokonku Navara - Controle de Qualidade; BackEnd e FrontEnd - 1230XXXX
+*Diogo Rodriguês* – Direção; Back-End e Front-End  
+Matricula: 12302678  
 
-## Estrutura de Diretórios (é tipo um Docker: a grosso modo, funciona como Máquina virtual em um sistema, é um contêiner. Põe cada pedaço do sistema em uma máquina virtual diferente)
+*Marco Antônio Mendes* – Planejamento; Back-End e Planilhas  
+Matricula: 12302260  
 
-<!-- Vamos Criar a Pasta Models, fazer a Model do Cliente-->
+*Pedro Henrique Moreira* – Organização; Planilhas e Front-End  
+Matricula: 12303020  
 
+*Gabriel Henrique* – Controle de Qualidade; Back-End e Front-End  
+Matricula: 12302961 
 
-src/UsuarioLogin
-
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-
-class UsuarioLogin extends Model {
-    use HasFactory;
-
-    protected $Preencher = [
-        'Nome',
-        'Email',
-        'Senha',
-    ];
-}
-<!-- Vamos Criar a tabela Criar Cliente-->
-src/CreateClients
-
-<?php
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
-
-return new class extends Migration {
-    public function up(): void {
-        Schema::create('CreateClients', function (Blueprint $tabela) {
-            $tabela->id();
-            $tabela->string('Nome');
-            $tabela->string('Email')->nullable();
-            $tabela->string('Senha')
-            $tabela->timestamps();
-        });
-    }
-
-    public function down(): void {
-        Schema::dropIfExists('CreateClients');
-    }
-};
-<!-- Vamos criar a Controller do Cliente-->
-src/ClientController
-
-
-use App\Models\UsuarioLogin;
-use Illuminate\Http\Request;
-
-class ClientController extends Controller {
-    public function index() {
-        $ViewClient = UsuarioLogin::all();
-        return view('Cliente.index', compact('ViewClient')); <!--AVISO ! A View cliente(Cliente.index) ainda não foi criada, eu coloquei de exemplo-->
-    }
-
-
-    public function create() {
-        return view('Cliente.index');
-    }
-
-
-    public function store(Request $requisicao) {
-        $requisicao->validate([
-            'Nome' => 'required|string|max:100',
-            'Email' => 'nullable|string',
-            'Senha' => 'required|string',
-        ]);
-
-        UsuarioLogin::create($requisicao->all());
-
-        return redirect()->route('Cliente.index')->with('successo', 'Yeahhhh ! Cliente Cadastrado com sucesso');
-    }
-}
+## Estrutura de Diretórios
 
 <!--Fim da Controller do Cliente-->
 
-projeto/
-├── src/               # Código-fonte principal
-├── docs/              # Documentação
-├── tests/
-tests/UsuarioLogin
-tests/CreateClients
-tests/ClientController
-├── README.md          # Arquivo de descrição do projeto
-└── requirements.txt   # Dependências do projeto (se houver)
+EletroDescarte/
+├── .vite/
+├── app/
+│   ├── Http/
+│   ├── Models/
+│   ├── Providers/
+│   └── View/
+├── bootstrap/
+│   └── cache/
+├── config/
+│   ├── app.php
+│   ├── auth.php
+│   ├── cache.php
+│   ├── database.php
+│   ├── filesystems.php
+│   ├── logging.php
+│   ├── mail.php
+│   ├── queue.php
+│   ├── services.php
+│   └── session.php
+├── database/
+│   ├── factories/
+│   ├── migrations/
+│   ├── seeders/
+│   ├── database.sqlite
+│   └── eletrodescartesbanco.sql
+├── node_modules/
+├── public/
+│   ├── backend/
+│   │   └── assets/
+│   │       ├── css/
+│   │       ├── fonts/
+│   │       ├── img/
+│   │       ├── js/
+│   │       └── modules/
+│   ├── build/
+│   ├── img/
+│   ├── .htaccess
+│   ├── favicon.ico
+│   ├── index.php
+│   └── robots.txt
+├── resources/
+│   ├── css/
+│   ├── js/
+│   └── views/
+│       ├── admin/
+│       ├── admin-template/
+│       ├── auth/
+│       ├── components/
+│       ├── layouts/
+│       ├── profile/
+│       └── tasks/
+├── routes/
+│   ├── auth.php
+│   ├── console.php
+│   └── web.php
+├── storage/
+│   ├── app/
+│   ├── framework/
+│   └── logs/
+└── README.md
 
 
 ## Como Executar o Projeto
 
 ### 1. Pré-requisitos
 <!-- Liste os requisitos necessários, como linguagens, frameworks, bibliotecas, banco de dados, etc. -->
-Linguagem/Versão utilizada: Blade, php, Html, Css e JavaScript
-Dependências necessárias
-Banco de dados
+- XAMPP (ou Laragon/WAMP)
+- PHP 8.1+ 
+- Composer
+- MySQL (ativo no XAMPP)
 
-### 2. Instalação
-<!-- Explique como preparar o ambiente -->
-bash
 # Clone o repositório
 git clone https://diogo-cotemig.github.io/EletroDescarte/
 
-# Acesse a pasta do projeto
-cd View/Index.Blaze.php
+1. Acesse *http://localhost/phpmyadmin*
+2. Clique em Novo
+3. Crie um banco de dados com o nome: eletrodescartesbanco
+4. Vá em *Importar*
+5. Clique em *Escolher arquivo*
+6. Selecione o arquivo que está dentro de EletroDescarte/Database (eletrodescartesbanco.sql)
+7. Clique em *Executar*
 
-# Instale as dependências (se houver)
+# Acesse a pasta do projeto
+cd Tasks/Index.Blaze.php
+
+
+### 2. Instalação
+# Instale as dependências
 comando-de-instalação:
-php artisan test
-composer global require laravel/installer
-laravel new example-app
-npm install && npm run build
+composer install
+php artisan key:generate
+npm install
 
 ### 3. Execução
 <!-- Explique como rodar o projeto -->
 bash
 # Execute o projeto
 comando-de-execucao
-
-
+php artisan serve
+npm run dev
 ### 4. Acesso
+
 <!-- Informe como acessar a aplicação (por exemplo, URL local ou credenciais de teste) -->
 URL local: http://localhost:3000  
-Usuário padrão: admin  
-Senha padrão: admin123  
-
+Usuarios já pre-cadastrados: 
+Database/Seeders/UserSeeder.php
+USUARIO COMUM
+'name' => 'Gleison Brito'
+'email' => 'user@gmail.com.br'
+'password' => bcrypt('password123')
+ADMINISTRADORES
+'name' => 'Diogo Rodrigues',
+'email' => 'Admin@gmail.com.br',
+'password' => bcrypt('123456789')
+-----------------------
+'name' => 'Pedro Henrique',
+'email' => 'Pedro@outlook.com.br',
+'password' => bcrypt('PXingu1234'),
+----------------------
+'name' => 'Gabriel Henrique',
+'email' => 'Zion@gmail.com.br',
+'password' => bcrypt('12345678'),
+---------------------
+'name' => 'Marco Antônio',
+'email' => 'Tarzan@hotmail.com.br',
+'password' => bcrypt('87654321'),
 ---
-
-## Observações
-<!-- Coloque aqui informações adicionais, como problemas conhecidos, melhorias futuras ou instruções extras -->
-
