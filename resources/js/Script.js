@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    
     // ----------------------
     // Leia Mais
     // ----------------------
