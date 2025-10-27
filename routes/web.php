@@ -21,7 +21,9 @@ Route::get('admin/login',[AdminController::class, 'login'])->name('admin.login')
 // recuperação de senha
 Route::get('admin/forgot-password',[AdminController::class, 'forgot'])->name('admin.forgot');
 
-
+Route::get('/servicos', function () {
+    return view('tasks.Cards');
+})->name('servicos');
 
 Route::get('/OndeDescarte', function () {
     return view('tasks.OndeDescarte');
