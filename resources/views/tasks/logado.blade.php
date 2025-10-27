@@ -243,7 +243,7 @@
 
 
   <div class="logo-container">
-  <img src="{{ asset('public/img/Eletro-DescarteLOGO.png') }}" alt="Logo EletroDescarte" class="minha-imagem">
+  <img src="{{ asset('img/Eletro-DescarteLOGO.png') }}" alt="Logo EletroDescarte" class="minha-imagem">
   <br>
   <a href="#" class="btn-primary">Conheça a EletroDescarte</a>
 </div>
