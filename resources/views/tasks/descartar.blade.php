@@ -25,7 +25,7 @@
         <li><a href="#" onclick="setDestino('Av. Barão Homem de Melo, 1579 - BH')">--- Galpão, Barão Homem de Melo, 1579</a></li>
         <li><a href="#" onclick="setDestino('BR-356, 3049 - BH Shopping')">--- Shopping, BH Shopping, 3049</a></li>
       </ul>
-      <img id="logoEle" src="{{ asset('logo.png') }}" alt="Logo Eletro Descarte" />
+      <img id="logoEle" src="{{ asset('img/logo.png') }}" alt="Logo Eletro Descarte" />
     </aside>
 
     <section class="map-area">
