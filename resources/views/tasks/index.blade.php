@@ -15,7 +15,7 @@
         <li><a href="#">Início</a></li>
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#" id="quemSomosBtn">Quem Somos</a></li>
-        <li><a href="servicos">Serviços</a></li>
+        <li><a href="{{ route('servicos') }}">Serviços</a></li>
         <li><a href="{{ route('descartar') }}">Pontos de Descarte</a></li>
         <li><a href="#">Contato</a></li>
         <li><a href="#" id="supportBtn" class="support-btn">🔧 Suporte</a></li>
@@ -228,7 +228,7 @@
       <div class="hero-particles">
   <!-- Partículas serão adicionadas via CSS -->
 </div>
-      <img src="https://via.placeholder.com/500x400/0af/fff?text=Lixo+Eletrônico" alt="Lixo Eletrônico">
+      <img src="{{ asset('img/ImagemLixo.png') }}" alt="Lixo Eletrônico">
     </div>
   </section>
 
@@ -247,13 +247,9 @@
             A quantidade de lixo eletrônico no mundo cresce a cada ano, e o descarte incorreto causa danos irreversíveis ao nosso meio ambiente. Materiais tóxicos se infiltram no solo e na água, prejudicando ecossistemas e a saúde humana.
         </p>
         <p class="about-text">
-            É por isso que a <strong>EletroDescarte</strong> existe. Nossa missão é oferecer uma solução eficiente, segura e responsável para o descarte de eletrônicos, garantindo que cada componente seja reciclado ou reutilizado da maneira correta. Acreditamos que a tecnologia e a sustentabilidade podem e devem caminhar juntas.
+          É por isso que a <strong>EletroDescarte</strong> existe. Nossa missão é oferecer uma solução eficiente, segura e responsável para o descarte de eletrônicos, garantindo que cada componente seja reciclado ou reutilizado da maneira correta. Acreditamos que a tecnologia e a sustentabilidade podem e devem caminhar juntas.
         </p>
-<!--Mudança Diogo
-  <img src="{{ asset('img/Eletro-DescarteLOGO.png') }}" alt="Logo EletroDescarte" class="minha-imagem">
-        <br>
-        <a href="#" class="btn-primary">Conheça a EletroDescarte</a>
--->
+
 
 
 
@@ -458,11 +454,157 @@
       </div>
     </div>
 
-    <div class="categories-cta">
-      <p class="cta-text">Não sabe onde descartar seu eletrônico?</p>
-      <a href="pontos-descarte.html" class="btn cta-button">Encontrar Ponto de Coleta</a>
+<div class="categories-cta">
+  <p class="cta-text">Não sabe onde descartar seu eletrônico?</p>
+  <div class="cta-buttons">
+    <button id="importanciaBtn" class="btn cta-button secondary-cta">
+      ❓ Qual a importância de descartar o lixo eletrônico?
+    </button>
+    <a href="{{ route('descartar') }}" class="btn cta-button">Encontrar Ponto de Coleta</a>
+  </div>
+</div>
+<!-- Modais de Categorias -->
+<div id="modal-perifericos" class="category-modal">
+    <div class="modal-content-category">
+        <span class="close" onclick="closeCategoryModal('perifericos')">&times;</span>
+        <h2>Descarte de Periféricos</h2>
+        <div class="modal-category-info">
+            <div class="info-icon">⌨️</div>
+            <h3>Itens aceitos:</h3>
+            <ul class="items-list">
+                <li>✓ Teclados (com e sem fio)</li>
+                <li>✓ Mouses e trackpads</li>
+                <li>✓ Fones de ouvido</li>
+                <li>✓ Webcams</li>
+                <li>✓ Caixas de som</li>
+            </ul>
+            <div class="info-box">
+                <p><strong>⚠️ Importante:</strong> Remova pilhas e baterias antes do descarte.</p>
+            </div>
+            <button class="btn-ir-mapas" onclick="goToMaps('perifericos')">
+                📍 Encontrar Local de Descarte
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="modal-hardware" class="category-modal">
+    <div class="modal-content-category">
+        <span class="close" onclick="closeCategoryModal('hardware')">&times;</span>
+        <h2>Descarte de Hardware</h2>
+        <div class="modal-category-info">
+            <div class="info-icon">🔧</div>
+            <h3>Itens aceitos:</h3>
+            <ul class="items-list">
+                <li>✓ Processadores (CPUs)</li>
+                <li>✓ Placas-mãe</li>
+                <li>✓ Memórias RAM</li>
+                <li>✓ HDs e SSDs</li>
+                <li>✓ Placas de vídeo</li>
+            </ul>
+            <div class="info-box">
+                <p><strong>⚠️ Importante:</strong> Apague todos os dados antes do descarte.</p>
+            </div>
+            <button class="btn-ir-mapas" onclick="goToMaps('hardware')">
+                📍 Encontrar Local de Descarte
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="modal-celulares" class="category-modal">
+    <div class="modal-content-category">
+        <span class="close" onclick="closeCategoryModal('celulares')">&times;</span>
+        <h2>Descarte de Celulares</h2>
+        <div class="modal-category-info">
+            <div class="info-icon">📱</div>
+            <h3>Itens aceitos:</h3>
+            <ul class="items-list">
+                <li>✓ Smartphones</li>
+                <li>✓ Tablets</li>
+                <li>✓ Carregadores</li>
+                <li>✓ Baterias</li>
+                <li>✓ Power banks</li>
+            </ul>
+            <div class="info-box">
+                <p><strong>⚠️ Importante:</strong> Faça reset de fábrica e remova chips.</p>
+            </div>
+            <button class="btn-ir-mapas" onclick="goToMaps('celulares')">
+                📍 Encontrar Local de Descarte
+            </button>
+        </div>
+    </div>
+</div>
+
+<div id="modal-telas" class="category-modal">
+    <div class="modal-content-category">
+        <span class="close" onclick="closeCategoryModal('telas')">&times;</span>
+        <h2>Descarte de Telas</h2>
+        <div class="modal-category-info">
+            <div class="info-icon">🖥️</div>
+            <h3>Itens aceitos:</h3>
+            <ul class="items-list">
+                <li>✓ Monitores LCD/LED</li>
+                <li>✓ TVs</li>
+                <li>✓ Notebooks (tela quebrada)</li>
+                <li>✓ Projetores</li>
+            </ul>
+            <div class="info-box">
+                <p><strong>⚠️ Importante:</strong> Não descarte no lixo comum.</p>
+            </div>
+            <button class="btn-ir-mapas" onclick="goToMaps('telas')">
+                📍 Encontrar Local de Descarte
+            </button>
+        </div>
+    </div>
+</div>
+<!-- MODAL IMPORTÂNCIA DO DESCARTE -->
+<div id="importanciaModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">💡 Importância do Descarte Correto</h2>
+      <button class="close-modal" id="closeImportanciaModal">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section">
+        <h3>🌍 Impacto Ambiental</h3>
+        <p>O lixo eletrônico contém <strong>substâncias altamente tóxicas</strong> como chumbo, mercúrio, cádmio e arsênio. Quando descartados incorretamente em aterros comuns, esses materiais contaminam o solo e os lençóis freáticos, causando danos irreversíveis ao meio ambiente.</p>
+      </div>
+
+      <div class="highlight-box" style="background: rgba(255, 0, 0, 0.1); border-color: #ff4444;">
+        <p><strong>⚠️ Dados Alarmantes:</strong> O Brasil produz mais de 2 milhões de toneladas de lixo eletrônico por ano, e apenas 3% é reciclado corretamente!</p>
+      </div>
+
+      <div class="modal-section">
+        <h3>🏥 Saúde Humana</h3>
+        <p>As substâncias tóxicas presentes nos eletrônicos podem causar:</p>
+        <p><strong>• Chumbo:</strong> Danos ao sistema nervoso e problemas renais</p>
+        <p><strong>• Mercúrio:</strong> Problemas neurológicos e respiratórios</p>
+        <p><strong>• Cádmio:</strong> Câncer e danos aos ossos</p>
+        <p><strong>• Arsênio:</strong> Intoxicação e doenças graves</p>
+      </div>
+
+      <div class="modal-section">
+        <h3>♻️ Recuperação de Recursos</h3>
+        <p>Eletrônicos contêm materiais valiosos que podem ser reciclados:</p>
+        <p><strong>• Ouro, prata e cobre</strong> podem ser extraídos e reutilizados</p>
+        <p><strong>• Plásticos</strong> podem ser transformados em novos produtos</p>
+        <p><strong>• Vidro e metais</strong> podem ter nova vida útil</p>
+        <p>A reciclagem adequada economiza recursos naturais e reduz a necessidade de mineração.</p>
+      </div>
+
+      <div class="modal-section">
+        <h3>🌱 Economia Circular</h3>
+        <p>O descarte correto faz parte da <strong>economia circular</strong>, onde produtos são reutilizados, remanufaturados ou reciclados, reduzindo o desperdício e criando um ciclo sustentável de produção e consumo.</p>
+      </div>
+
+      <div class="highlight-box">
+        <p><strong>✅ Faça sua parte!</strong> Ao descartar corretamente seus eletrônicos, você protege o meio ambiente, preserva a saúde pública e contribui para um futuro mais sustentável.</p>
+      </div>
     </div>
   </div>
+</div>
+
 </section>
 
 <!-- FOOTER - ADICIONAR APÓS A SEÇÃO CATEGORIES -->
@@ -604,7 +746,58 @@
   <div class="footer-bg-effect"></div>
 </footer>
 
-  <script>
+ <script>
+
+  
+function openCategoryModal(category) {
+    document.getElementById('modal-' + category).style.display = 'flex';
+    document.body.classList.add('no-scroll');
+}
+
+function closeCategoryModal(category) {
+    document.getElementById('modal-' + category).style.display = 'none';
+    document.body.classList.remove('no-scroll');
+}
+
+function goToMaps(category) {
+    window.location.href = "{{ route('descartar') }}" + "?categoria=" + category;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Seleciona todos os cards por data-category
+    document.querySelectorAll('[data-category]').forEach(card => {
+        card.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            openCategoryModal(category);
+        });
+    });
+});
+// Modal Importância do Descarte
+const importanciaBtn = document.getElementById('importanciaBtn');
+const importanciaModal = document.getElementById('importanciaModal');
+const closeImportanciaModal = document.getElementById('closeImportanciaModal');
+
+if (importanciaBtn) {
+  importanciaBtn.addEventListener('click', function() {
+    importanciaModal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  });
+}
+
+if (closeImportanciaModal) {
+  closeImportanciaModal.addEventListener('click', function() {
+    importanciaModal.classList.remove('show');
+    document.body.style.overflow = 'auto';
+  });
+}
+
+importanciaModal.addEventListener('click', function(e) {
+  if (e.target === importanciaModal) {
+    importanciaModal.classList.remove('show');
+    document.body.style.overflow = 'auto';
+  }
+});
+</script><script>
     // Modal
     const quemSomosBtn = document.getElementById('quemSomosBtn');
     const quemSomosModal = document.getElementById('quemSomosModal');
@@ -890,6 +1083,327 @@ if (hamburger && navMenu) {
     }
   });
 }
-</script>
+// Modal Sobre a EletroDescarte
+const saibaMaisBtn = document.querySelector('.btn.primary'); // Botão "Saiba Mais"
+const sobreModal = document.getElementById('sobreModal');
+const closeSobreModal = document.getElementById('closeSobreModal');
 
+// Abrir modal ao clicar em "Saiba Mais"
+if (saibaMaisBtn) {
+  saibaMaisBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    sobreModal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  });
+}
+
+// Fechar modal ao clicar no X
+if (closeSobreModal) {
+  closeSobreModal.addEventListener('click', function() {
+    sobreModal.classList.remove('show');
+    document.body.style.overflow = 'auto';
+  });
+}
+
+// Fechar modal ao clicar fora
+sobreModal.addEventListener('click', function(e) {
+  if (e.target === sobreModal) {
+    sobreModal.classList.remove('show');
+    document.body.style.overflow = 'auto';
+  }
+});
+
+
+</script>
+<script>
+  // ==========================================
+// CÓDIGO JAVASCRIPT CONSOLIDADO
+// ==========================================
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // ----------------------
+  // SCROLL SUAVE: Descart → Descart2
+  // ----------------------
+  const descartBtn = document.getElementById('Descart');
+  const descartSection = document.getElementById('Descart2');
+  
+  if (descartBtn && descartSection) {
+    descartBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const navbar = document.querySelector('.navbar');
+      const navbarHeight = navbar ? navbar.offsetHeight : 0;
+      const targetPosition = descartSection.offsetTop - navbarHeight - 20;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+      
+      // Efeito visual opcional
+      descartSection.style.transition = 'all 0.3s ease';
+      descartSection.style.transform = 'scale(1.02)';
+      setTimeout(() => {
+        descartSection.style.transform = 'scale(1)';
+      }, 300);
+    });
+  }
+
+  // ----------------------
+  // MODAIS DE CATEGORIA
+  // ----------------------
+  window.openCategoryModal = function(category) {
+    const modal = document.getElementById('modal-' + category);
+    if (modal) {
+      modal.style.display = 'flex';
+      document.body.classList.add('modal-open');
+    }
+  };
+
+  window.closeCategoryModal = function(category) {
+    const modal = document.getElementById('modal-' + category);
+    if (modal) {
+      modal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    }
+  };
+
+  window.goToMaps = function(category) {
+    window.location.href = "{{ route('descartar') }}" + "?categoria=" + category;
+  };
+
+  // Cards de categoria - click listener
+  document.querySelectorAll('[data-category]').forEach(card => {
+    card.addEventListener('click', function() {
+      const category = this.getAttribute('data-category');
+      openCategoryModal(category);
+    });
+  });
+
+  // ----------------------
+  // MODAL IMPORTÂNCIA
+  // ----------------------
+  const importanciaBtn = document.getElementById('importanciaBtn');
+  const importanciaModal = document.getElementById('importanciaModal');
+  const closeImportanciaModal = document.getElementById('closeImportanciaModal');
+
+  if (importanciaBtn && importanciaModal) {
+    importanciaBtn.addEventListener('click', function() {
+      importanciaModal.classList.add('show');
+      document.body.classList.add('modal-open');
+    });
+  }
+
+  if (closeImportanciaModal) {
+    closeImportanciaModal.addEventListener('click', function() {
+      importanciaModal.classList.remove('show');
+      document.body.classList.remove('modal-open');
+    });
+  }
+
+  if (importanciaModal) {
+    importanciaModal.addEventListener('click', function(e) {
+      if (e.target === importanciaModal) {
+        importanciaModal.classList.remove('show');
+        document.body.classList.remove('modal-open');
+      }
+    });
+  }
+
+  // ----------------------
+  // MODAL QUEM SOMOS
+  // ----------------------
+  const quemSomosBtn = document.getElementById('quemSomosBtn');
+  const quemSomosModal = document.getElementById('quemSomosModal');
+  const closeModal = document.getElementById('closeModal');
+
+  if (quemSomosBtn && quemSomosModal) {
+    quemSomosBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      quemSomosModal.classList.add('show');
+      document.body.classList.add('modal-open');
+    });
+  }
+
+  if (closeModal) {
+    closeModal.addEventListener('click', function() {
+      quemSomosModal.classList.remove('show');
+      document.body.classList.remove('modal-open');
+    });
+  }
+
+  if (quemSomosModal) {
+    quemSomosModal.addEventListener('click', function(e) {
+      if (e.target === quemSomosModal) {
+        quemSomosModal.classList.remove('show');
+        document.body.classList.remove('modal-open');
+      }
+    });
+  }
+
+  // ----------------------
+  // MODAL SUPORTE
+  // ----------------------
+  const supportBtn = document.getElementById('supportBtn');
+  const supportModal = document.getElementById('supportModal');
+  const closeSupportModal = document.getElementById('closeSupportModal');
+
+  if (supportBtn && supportModal) {
+    supportBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      supportModal.classList.add('show');
+      document.body.classList.add('modal-open');
+    });
+  }
+
+  if (closeSupportModal) {
+    closeSupportModal.addEventListener('click', function() {
+      supportModal.classList.remove('show');
+      document.body.classList.remove('modal-open');
+    });
+  }
+
+  if (supportModal) {
+    supportModal.addEventListener('click', function(e) {
+      if (e.target === supportModal) {
+        supportModal.classList.remove('show');
+        document.body.classList.remove('modal-open');
+      }
+    });
+  }
+
+  // ----------------------
+  // MÁSCARA TELEFONE
+  // ----------------------
+  const supportPhone = document.getElementById('supportPhone');
+  if (supportPhone) {
+    supportPhone.addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length <= 11) {
+        value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+        value = value.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+        e.target.value = value;
+      }
+    });
+  }
+
+  // ----------------------
+  // FORMULÁRIO DE SUPORTE
+  // ----------------------
+  const supportForm = document.getElementById('supportForm');
+  if (supportForm) {
+    supportForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const submitBtn = this.querySelector('button[type="submit"]');
+      
+      submitBtn.textContent = 'Enviando...';
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch('/chamado', {
+          method: 'POST',
+          headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+            'Accept': 'application/json',
+          },
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          alert(`✅ ${result.message}\nProtocolo: ${result.data.protocol}`);
+          this.reset();
+          supportModal.classList.remove('show');
+          document.body.classList.remove('modal-open');
+        } else {
+          alert(`❌ ${result.message}`);
+          console.error(result.errors);
+        }
+      } catch (error) {
+        alert('❌ Erro ao enviar o chamado. Tente novamente.');
+        console.error(error);
+      } finally {
+        submitBtn.textContent = 'Enviar Solicitação';
+        submitBtn.disabled = false;
+      }
+    });
+  }
+
+  // ----------------------
+  // MENU HAMBURGUER
+  // ----------------------
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.querySelector('.navbar ul');
+
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', function() {
+      this.classList.toggle('active');
+      navMenu.classList.toggle('active');
+      document.body.classList.toggle('modal-open');
+    });
+
+    navMenu.addEventListener('click', function(e) {
+      if (e.target.tagName === 'A') {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.classList.remove('modal-open');
+      }
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.classList.remove('modal-open');
+      }
+    });
+  }
+
+  // ----------------------
+  // TOGGLE PASSWORD
+  // ----------------------
+  document.querySelectorAll('.toggle-password').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = this.getAttribute('data-target');
+      const passwordInput = document.getElementById(targetId);
+      
+      if (passwordInput) {
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          this.textContent = '🙈';
+        } else {
+          passwordInput.type = 'password';
+          this.textContent = '👁️';
+        }
+      }
+    });
+  });
+
+  // ----------------------
+  // FORMULÁRIO DE REGISTRO
+  // ----------------------
+  const registerForm = document.getElementById('registerForm');
+  if (registerForm) {
+    registerForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const password = this.querySelector('#registerPassword').value;
+      const confirmPassword = this.querySelector('#confirmPassword').value;
+
+      if (password !== confirmPassword) {
+        alert('As senhas não coincidem!');
+        return;
+      }
+
+      alert('Cadastro realizado com sucesso!');
+      this.reset();
+    });
+  }
+
+  console.log('✅ Scripts carregados com sucesso!');
+});
+</script>
 </body></html>
