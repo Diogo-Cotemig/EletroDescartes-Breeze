@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  @vite(['resources/css/Style.css', 'resources/js/Script.js', 'resources/js/server.js'])
   <title>EletroDescarte - Descarte Eletrônico Sustentável</title>
-  <link rel="icon" type="image/png" href="{{ asset('public/img/Eletro-DescarteLOGO.png') }}">
+  <link rel="icon" type="image/png" href="{{ asset('img/Eletro-DescarteLOGO.png') }}">
 </head>
 <body style="overflow: auto;">
   <!-- HEADER -->
@@ -254,7 +254,7 @@
 
 
   <div class="logo-container">
-  <img src="{{ asset('public/img/Eletro-DescarteLOGO.png') }}" alt="Logo EletroDescarte" class="minha-imagem">
+  <img src="{{ asset('img/Eletro-DescarteLOGO.png') }}" alt="Logo EletroDescarte" class="minha-imagem">
   <br>
   <a href="#" class="btn-primary">Conheça a EletroDescarte</a>
 </div>
