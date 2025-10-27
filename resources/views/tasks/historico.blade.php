@@ -4,12 +4,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Histórico e Configurações — EletroDescarte</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+   <link rel="icon" type="image/png" href="{{ asset('img/Eletro-DescarteLOGO.png') }}">
   @vite(['resources/css/historico.css'])
 </head>
 <body>
   <header class="hd">
     <div class="hd-left">
-      <img src="logo.png" alt="EletroDescarte" class="logo" onerror="this.style.opacity=0.6" />
+      <img src="{{ asset('img/Eletro-DescarteLOGO.png') }}" alt="EletroDescarte" class="logo" onerror="this.style.opacity=0.6" />
       <h1 class="site-title">Eletro<span>Descarte</span></h1>
     </div>
 
@@ -152,7 +153,7 @@
           <ul class="invoice-list">
             <li>
               <div>
-                <strong>Nota #1289</strong>
+                <strong>Nota #1245</strong>
                 <small>Pedido #1245 — 18/10/2025</small>
               </div>
               <div>
