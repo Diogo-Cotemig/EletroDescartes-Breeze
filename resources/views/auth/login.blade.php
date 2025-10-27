@@ -82,7 +82,7 @@
                   </div>
 
                   <div class="form-group">
-            <x-primary-button class="ms-3">
+            <x-primary-button class="ms-3" style="background-color: green;">
                 {{ __('Entrar') }}
             </x-primary-button>
                   </div>
