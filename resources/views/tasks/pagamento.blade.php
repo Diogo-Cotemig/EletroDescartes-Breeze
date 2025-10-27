@@ -36,6 +36,7 @@
       <input type="text" id="cvv" maxlength="3" required>
 
       <button type="submit">Finalizar Pagamento</button>
+      <img id="logoEle" src="{{ asset('img/logo.png') }}" alt="Logo Eletro Descarte" style="width:100px; display: block; margin: 20px auto;"/>
     </form>
 
     <div id="sucesso">✅ Pagamento confirmado! Obrigado por contribuir com o meio ambiente.<br><br>Você será redirecionado à página inicial.</div>
