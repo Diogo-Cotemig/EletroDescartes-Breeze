@@ -152,7 +152,7 @@
           <ul class="invoice-list">
             <li>
               <div>
-                <strong>Nota #1245</strong>
+                <strong>Nota #1289</strong>
                 <small>Pedido #1245 — 18/10/2025</small>
               </div>
               <div>
