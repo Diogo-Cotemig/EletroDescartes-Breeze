@@ -31,14 +31,14 @@ Realizações:
 - [x] Configuracao de Notificacoes
 - [x] Redes sociais da Empresa
 
-# Nome do Projeto
-<!-- Eletro-Descarte -->
+#Nome do Projeto
+##Eletro-Descarte
 
 ## Descrição
-<!-- Eletro-Descarte é uma empresa com o intuito de combater a poluição da terra devido ao descarte indevido do Lixo eletrônico, nossa empresa acolhe, separa e entrega a matéria prima de volta á empresas que vão reutilizar-las, tudo isso afim de diminuir o consumo excessivo de matéria prima em mineradoras (Ferro, Litio, cobre, ouro) e incentivar ás pessoas a cuidar do futuro da geração, jogando o lixo no local correto -->
+<Eletro-Descarte é uma empresa com o intuito de combater a poluição da terra devido ao descarte indevido do Lixo eletrônico, nossa empresa acolhe, separa e entrega a matéria prima de volta á empresas que vão reutilizar-las, tudo isso afim de diminuir o consumo excessivo de matéria prima em mineradoras (Ferro, Litio, cobre, ouro) e incentivar ás pessoas a cuidar do futuro da geração, jogando o lixo no local correto>
 
 ## Integrantes
-<!-- Liste todos os integrantes do grupo no formato Nome - Matrícula -->
+
 *Diogo Rodriguês* – Direção; Back-End e Front-End  
 Matricula: 12302678  
 
