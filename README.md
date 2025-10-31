@@ -6,26 +6,30 @@ Marco Antônio - 12302260
 Diogo Rodrigues - 12302678
 Turma 3E1
 
-- [x] Tela Inicial 
-- [x] Tela de cadastro de usuários
-- [x] Tela de login com autenticação
-- [x] Tela de esqueceu a senha
-- [x] Tela de administradores
-- [x] Tela de contato
-- [x] Tela de histórico do usuário
-- [x] Tela de graficos
+Realizações:
+- [x] Tela Inicial para usuarios não Cadastrados
+- [x] Tela de Cadastro de usuários
+- [x] Tela de Login
+- [x] Tela de Esqueceu a senha
+- [x] Aréa para Administradores
+- [x] Aréa para Contato com a nossa empreso pelo Email
+- [x] Tela de Histórico do usuário
+- [x] Aréa para monitoramento de atividades do Site
 - [x] Tela de pagamento
-- [x] Tela de servicos
-- [x] Busca eficiente
+- [x] Aréa para resgate de pontos (serviços)
+- [x] Aréa para criação de produtos (Em Admin)
+- [x] Modelo de informação eficiente
 - [x] Pontos de descarte em formato de maps
 - [x] Sistema de maps
-- [x] Informações em dashBoards
+- [x] Aréa para o usuario editar informações
+- [x] Aréa para o Administrador editar informações
 - [x] Assistência tecnica
-- [x] Tela de histórico do usuário
-- [x] Acompanhamento do descarte
+- [x] Aréa para o Administrador responder ao usuario sobre: Assistência tecnica
+- [x] Acompanhamento do descarte com o carreteiro
 - [x] Assistente Virtual
 - [x] Descartes concluidos
 - [x] Configuracao de Notificacoes
+- [x] Redes sociais da Empresa
 
 # Nome do Projeto
 <!-- Eletro-Descarte -->
