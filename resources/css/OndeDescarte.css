@@ -1,0 +1,413 @@
+/* ====== RESET E ESTILOS GLOBAIS (DARK MODE + POPPINS) ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-dark-bg: #0a0f0a;
+    --color-dark-main: #020202;
+    --color-neon-green: #00ff80;
+    --color-text-light: #e6e6e6;
+    --color-dark-card: rgba(0, 255, 128, 0.05);
+    --border-neon: 1px solid rgba(0, 255, 128, 0.3);
+    --shadow-neon-sm: 0 0 10px rgba(0, 255, 128, 0.2);
+    --shadow-neon-lg: 0 0 25px rgba(0, 255, 128, 0.3);
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: radial-gradient(circle at center, var(--color-dark-bg) 0%, var(--color-dark-main) 100%);
+    color: var(--color-text-light);
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Logo */
+.logo-site {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 100px;
+    z-index: 1000;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 255, 128, 0.4);
+    transition: transform 0.3s;
+}
+.logo-site:hover {
+    transform: scale(1.05);
+}
+
+/* ====== MAPA ====== */
+.mapa-container {
+    width: 100%;
+    height: 65vh;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 255, 128, 0.3);
+    border-bottom: 2px solid var(--color-neon-green);
+}
+
+#mapa {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.distancia-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(10, 20, 10, 0.8);
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: var(--color-neon-green);
+    border: var(--border-neon);
+    box-shadow: var(--shadow-neon-sm);
+    z-index: 1000;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+.distancia-tag::before {
+    content: "🛣️ Distância: ";
+    margin-right: 5px;
+}
+
+
+/* ====== CONTEÚDO PRINCIPAL (.main-content) ====== */
+.main-content {
+    flex-grow: 1;
+    padding: 30px 20px 40px;
+    background: linear-gradient(180deg, #040b04 0%, #0a0f0a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.title-header {
+    font-size: 1.8rem;
+    color: var(--color-neon-green);
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px rgba(0, 255, 128, 0.6);
+    letter-spacing: 1px;
+}
+
+/* ====== OPÇÕES (CARDS MODERNOS - .options-grid) ====== */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.option-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+    background: var(--color-dark-card);
+    color: var(--color-text-light);
+    border-radius: 10px;
+    border: var(--border-neon);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: var(--shadow-neon-sm);
+    text-transform: uppercase;
+    min-height: 120px;
+}
+
+.option-card:hover {
+    background: var(--color-neon-green);
+    color: var(--color-dark-main);
+    box-shadow: 0 0 25px var(--color-neon-green);
+    transform: translateY(-5px);
+}
+
+.option-card::before {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--color-neon-green);
+    transition: color 0.3s;
+}
+
+.option-card:hover::before {
+    color: var(--color-dark-main);
+}
+
+.option-card[data-icon="truck"]::before { content: "🚚"; }
+.option-card[data-icon="bin"]::before { content: "🗑️"; }
+.option-card[data-icon="office"]::before { content: "🏢"; }
+
+
+/* ====== MODAL ESTILIZADO (.modal) ====== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #0b0f0b 0%, #050805 100%);
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 650px;
+    width: 95%;
+    color: var(--color-text-light);
+    border: var(--border-neon);
+    box-shadow: var(--shadow-neon-lg);
+    position: relative;
+    text-align: center;
+    animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-content h3,
+.modal-content h2 {
+    color: var(--color-neon-green);
+    text-shadow: 0 0 10px rgba(0, 255, 128, 0.4);
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    font-size: 32px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    color: var(--color-neon-green);
+    transition: transform 0.2s, color 0.3s;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    transform: scale(1.2) rotate(90deg);
+    color: #ff005d;
+}
+
+
+/* ====== ESTILOS FORMULÁRIO DE COLETAS ====== */
+.form-header {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed rgba(0, 255, 128, 0.2);
+}
+
+.form-header h3 {
+    font-size: 1.6rem;
+}
+
+.form-header p {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.form-section {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-section h4 {
+    color: var(--color-neon-green);
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding-left: 5px;
+}
+
+/* Estilo para campos de input/select/textarea */
+.form-section input[type="text"],
+.form-section input[type="tel"],
+.form-section input[type="email"],
+.form-section input[type="date"],
+.form-section select,
+.form-section textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 128, 0.4);
+    border-radius: 6px;
+    color: var(--color-text-light);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-section input:focus,
+.form-section select:focus,
+.form-section textarea:focus {
+    border-color: var(--color-neon-green);
+    box-shadow: 0 0 8px rgba(0, 255, 128, 0.6);
+    outline: none;
+}
+
+/* Estilo para a área de itens (checkboxes) */
+.item-selector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.item-selector-grid label {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.item-selector-grid input[type="checkbox"] {
+    margin-right: 8px;
+    accent-color: var(--color-neon-green);
+    transform: scale(1.1);
+}
+
+.form-section textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Botão de Submissão do Formulário */
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    background-color: var(--color-neon-green);
+    color: var(--color-dark-main);
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px var(--color-neon-green);
+    text-transform: uppercase;
+}
+
+.submit-button:hover {
+    box-shadow: 0 0 30px var(--color-neon-green);
+    opacity: 0.95;
+    transform: translateY(-2px);
+}
+
+/* ====== BOTÕES DE ITENS (PONTO DE COLETA) ====== */
+.item-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.item-buttons button {
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--color-neon-green);
+    border: 1px solid rgba(0, 255, 128, 0.4);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.item-buttons button:hover {
+    background-color: var(--color-neon-green);
+    color: var(--color-dark-main);
+    box-shadow: 0 0 12px var(--color-neon-green);
+    transform: scale(1.05);
+}
+
+/* ====== MENSAGEM DE SUCESSO (FINALIZAR PONTO) ====== */
+.success-message {
+    padding: 10px;
+}
+.icon-success {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    line-height: 1;
+}
+.success-message p {
+    margin-bottom: 25px;
+}
+
+.action-button {
+    padding: 12px 30px;
+    background-color: var(--color-neon-green);
+    color: var(--color-dark-main);
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 15px var(--color-neon-green);
+}
+.action-button:hover {
+    box-shadow: 0 0 30px var(--color-neon-green);
+    opacity: 0.9;
+}
+
+
+/* ====== RESPONSIVIDADE ====== */
+@media screen and (max-width: 600px) {
+    .mapa-container {
+        height: 50vh;
+    }
+    .main-content {
+        padding: 25px 15px 30px;
+    }
+    .title-header {
+        font-size: 1.6rem;
+    }
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+    .option-card {
+        font-size: 1rem;
+        min-height: 100px;
+    }
+    .distancia-tag {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+    .modal-content {
+        padding: 30px 20px;
+    }
+    .item-selector-grid {
+        grid-template-columns: 1fr;
+    }
+    .logo-site {
+        width: 80px;
+    }
+}
