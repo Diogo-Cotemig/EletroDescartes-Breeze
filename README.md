@@ -151,8 +151,8 @@ npm install
 
 ### 3. Execução
 <!-- Explique como rodar o projeto -->
-apague o .example de .env.example
-e cole o arquivo em public/salvar
+apague o .example de .env.example // Copie o arquivo de public/salvar
+e cole o arquivo em .env
 # Execute o projeto
 comando-de-execucao
 php artisan serve
