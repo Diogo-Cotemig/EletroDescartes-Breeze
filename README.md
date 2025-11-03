@@ -139,7 +139,7 @@ git clone https://diogo-cotemig.github.io/EletroDescarte/
 7. Clique em *Executar*
 
 # Acesse a pasta do projeto
-cd Tasks/Index.Blaze.php
+cd Eletrodescartes-Breeze
 
 
 ### 2. Instalação
