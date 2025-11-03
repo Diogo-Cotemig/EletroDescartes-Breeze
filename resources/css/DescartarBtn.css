@@ -1,0 +1,147 @@
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(180deg, #0d0f0e 0%, #0b1a13 100%);
+  color: #fff;
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 25%;
+  min-width: 280px;
+  background: linear-gradient(180deg, #0d0f0e 0%, #0b1a13 100%);
+  border-right: 1px solid #0f3a23;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0, 255, 128, 0.05);
+}
+
+.sidebar h2 {
+  font-size: 22px;
+  color: #00ff88;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  border-bottom: 1px solid #00ff8840;
+  padding-bottom: 10px;
+}
+
+.sidebar label {
+  margin: 10px 0 5px;
+  font-weight: 600;
+  color: #d5d5d5;
+}
+
+.sidebar input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 12px;
+  border: 1px solid #00ff8840;
+  background: #121c15;
+  color: #e7e7e7;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.sidebar input:focus {
+  border-color: #00ff88;
+  outline: none;
+  box-shadow: 0 0 8px #00ff8830;
+}
+
+/* BOTÕES */
+.sidebar button {
+  padding: 12px;
+  background: linear-gradient(90deg, #00ff88, #00b36b);
+  color: #0b0f0e;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.sidebar button:hover {
+  background: linear-gradient(90deg, #00b36b, #00ff88);
+  transform: scale(1.03);
+}
+
+/* LISTA DE COLETA */
+.coleta-lista {
+  list-style: none;
+  margin-top: 25px;
+  padding-top: 10px;
+  border-top: 1px solid #00ff8830;
+}
+
+.coleta-lista li {
+  margin: 10px 0;
+}
+
+.coleta-lista a {
+  color: #00ff88;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.coleta-lista a:hover {
+  color: #00ffaa;
+  text-shadow: 0 0 6px #00ff8840;
+}
+
+/* LOGO */
+#logoEle {
+  margin-top: auto;
+  width: 120px;
+  align-self: center;
+  filter: drop-shadow(0 0 10px #00ff8850);
+}
+
+/* MAPA */
+.map-area {
+  width: 75%;
+  height: 100%;
+  position: relative;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+#distancia {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(13, 15, 14, 0.8);
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #00ff8840;
+  font-weight: 600;
+  z-index: 1000;
+  color: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.15);
+}
+
+/* RESPONSIVIDADE */
+@media screen and (max-width: 768px) {
+  .container { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; }
+  .map-area { width: 100%; height: 400px; }
+}
