@@ -17,7 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         //filtragem de adms
         $middleware->alias([
-            'admin' => \App\Http\Middleware\Admin::class,
+            'admin' => \App\Http\Middleware\AdminMiddleware::class,
             'vendor' => \App\Http\Middleware\Vendor::class,
             'user' => \App\Http\Middleware\User::class,
         ]);
