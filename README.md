@@ -105,7 +105,7 @@ EletroDescarte/
 - Node.js + NPM  
 
 ### 2. Clonar o Repositório
-git clone https://diogo-cotemig.github.io/EletroDescarte/
+git clone https://DiogoRodriguesActivity.github.io/EletroDescartes-Breeze/
 
 ### 3. Importar o Banco de Dados
 
