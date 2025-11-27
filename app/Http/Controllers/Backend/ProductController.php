@@ -21,6 +21,13 @@ class ProductController extends Controller
     {
         return view('admin.products.create');
     }
+    /**
+ * Exibe o formulário de edição do produto (usando a mesma view de create)
+ */
+public function edit(Product $product)
+{
+    return view('admin.products.create', compact('product'));
+}
 
     public function store(Request $request)
     {
