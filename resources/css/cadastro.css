@@ -1,0 +1,259 @@
+    body {
+        background: #000 !important;
+        font-family: 'Inter', sans-serif;
+        color: #00ff85;
+    }
+
+    .header-title {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #00ff85;
+        text-shadow: 0 0 8px #00ff85;
+        margin-bottom: 2rem;
+    }
+
+    section.card {
+        background: #020617;
+        border-radius: 1rem;
+        border: 1px solid rgba(0, 140, 255, 0.5);
+        box-shadow: 0 0 15px rgba(0, 140, 255, 0.4);
+        padding: 2rem;
+        max-width: 700px;
+        margin: 0 auto 2rem auto;
+        transition: 0.3s ease;
+    }
+
+    section.card:hover {
+        box-shadow: 0 0 25px rgba(0, 140, 255, 0.8);
+        transform: translateY(-4px);
+    }
+
+    section.card h2 {
+        color: #3fa9ff;
+        margin-bottom: 0.5rem;
+        font-size: 1.4rem;
+        text-shadow: 0 0 6px #3fa9ff;
+    }
+
+    section.card p {
+        color: #00ff85;
+        margin-bottom: 1.5rem;
+        opacity: 0.85;
+    }
+
+    label {
+        font-weight: 600;
+        color: #00ff85;
+        display: block;
+        margin-bottom: 0.3rem;
+    }
+
+    input {
+        width: 100%;
+        background: #0a0f1f;
+        border: 1px solid #3fa9ff;
+        color: #00ff85;
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        transition: 0.25s;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #00ccff;
+        box-shadow: 0 0 10px #00ccff;
+    }
+
+    .btn {
+        background: linear-gradient(90deg, #0077ff, #00c3ff);
+        color: #fff;
+        padding: 0.7rem 1.6rem;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+        border: none;
+        text-shadow: 0 0 5px #000;
+        box-shadow: 0 0 12px rgba(0, 190, 255, 0.6);
+        transition: 0.3s ease;
+    }
+
+    .btn:hover {
+        box-shadow: 0 0 18px rgba(0, 190, 255, 0.9);
+        transform: translateY(-2px);
+    }
+
+    .btn-danger {
+        background: linear-gradient(90deg, #ff0033, #ff5577);
+        box-shadow: 0 0 15px rgba(255, 0, 80, 0.7);
+    }
+
+    .btn-danger:hover {
+        box-shadow: 0 0 20px rgba(255, 0, 80, 1);
+    }
+
+    .fab {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background: #0077ff;
+        color: #fff;
+        font-size: 1.5rem;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+        box-shadow: 0 0 12px rgba(0, 140, 255, 0.8);
+        transition: 0.3s;
+    }
+
+    .fab:hover {
+        box-shadow: 0 0 18px rgba(0, 160, 255, 1);
+        transform: translateY(-3px);
+    }
+
+    :root{
+    --neon-green: #00ff85;
+    --neon-blue: #00c3ff;
+    --card-bg: #020617;
+}
+
+/* ===== Body ===== */
+body {
+    background: #000 !important;
+    font-family: 'Inter', sans-serif;
+    color: var(--neon-green);
+}
+
+/* ===== Título ===== */
+.profile-header{
+    text-align:center;
+    margin-top: 1.5rem;
+}
+.profile-title{
+    font-size:2rem;
+    color:var(--neon-green);
+    font-weight:700;
+    text-shadow:0 0 12px var(--neon-green);
+    animation: neonPulseText 3s infinite;
+}
+
+/* ===== Container ===== */
+.container-profile{
+    max-width:900px;
+    margin:0 auto;
+    padding:1rem;
+}
+
+/* ===== Cards ===== */
+.card{
+    background:rgba(2,6,23,0.92);
+    border:1px solid rgba(0,195,255,0.4);
+    border-radius:14px;
+    padding:1.6rem;
+    margin-bottom:1.5rem;
+    box-shadow:0 0 18px rgba(0,195,255,0.25);
+    animation: neonPulse 4s ease-in-out infinite;
+    transition:0.2s;
+}
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 0 24px rgba(0,195,255,0.65);
+}
+
+/* ===== Inputs ===== */
+input, textarea{
+    background:rgba(8,12,24,0.6) !important;
+    border:1px solid rgba(0,195,255,0.4) !important;
+    color:var(--neon-green) !important;
+}
+input:focus{
+    box-shadow:0 0 12px rgba(0,195,255,0.5) !important;
+    border-color:var(--neon-blue) !important;
+}
+
+/* ===== Buttons ===== */
+button, .btn, .x-primary-button{
+    background:linear-gradient(90deg,#0077ff,#00c3ff) !important;
+    color:#fff !important;
+    border:none !important;
+    border-radius:8px !important;
+    padding:.6rem 1.4rem !important;
+    box-shadow:0 0 12px rgba(0,195,255,0.45) !important;
+    animation: neonPulse 4s ease-in-out infinite;
+}
+button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 20px rgba(0,195,255,0.8) !important;
+}
+
+/* ===== Botão deletar ===== */
+.x-danger-button{
+    background:linear-gradient(90deg,#ff0033,#ff5577) !important;
+    box-shadow:0 0 15px rgba(255,0,80,0.75) !important;
+}
+
+/* ===== FAB Voltar ===== */
+.fab{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    border:none;
+    cursor:pointer;
+    font-size:22px;
+    background:linear-gradient(90deg,#0077ff,#00c3ff);
+    box-shadow:0 0 20px rgba(0,195,255,0.8);
+    transition:0.2s;
+}
+.fab:hover{
+    transform:translateY(-4px);
+}
+
+/* ===== Neon animations ===== */
+@keyframes neonPulse{
+    0%{box-shadow:0 0 8px rgba(0,195,255,0.20);}
+    50%{box-shadow:0 0 22px rgba(0,195,255,0.65);}
+    100%{box-shadow:0 0 8px rgba(0,195,255,0.20);}
+}
+@keyframes neonPulseText{
+    0%{text-shadow:0 0 6px var(--neon-green);}
+    50%{text-shadow:0 0 16px var(--neon-green);}
+    100%{text-shadow:0 0 6px var(--neon-green);}
+}
+
+/* ===== Mobile ===== */
+@media(max-width:768px){
+    .profile-title{font-size:1.6rem;}
+    .card{padding:1.2rem;}
+    .fab{width:46px;height:46px;font-size:18px;}
+}
+.profile-logo {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 4px rgba(0,255,180,0.4));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Animação suave ao passar o mouse (desktop) */
+.profile-logo:hover {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 8px rgba(0,255,180,0.7));
+}
+
+/* MOBILE — deixa a imagem menor ainda */
+@media (max-width: 480px) {
+    .profile-logo {
+        width: 32px;
+        height: 32px;
+        filter: none; /* opcional */
+    }
+}
